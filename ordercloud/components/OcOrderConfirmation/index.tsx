@@ -11,9 +11,15 @@ const OcOrderConfirmation: FunctionComponent<OcOrderConfirmationProps> = ({ orde
   )
 
   return (
-    <div>
-      <h2>Order Confirmation</h2>
-      <pre>{JSON.stringify(recentOrder, null, 2)}</pre>
+    <div className="bg-white">
+      <div className="max-w-4xl mx-auto py-10 px-4 sm:py-18 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-extrabold tracking-tight text-gray-700">
+          Order Confirmation (WIP)
+        </h2>
+        <div className="mt-5">
+          <pre>{JSON.stringify(recentOrder, null, 2)}</pre>
+        </div>
+      </div>
     </div>
   )
 }

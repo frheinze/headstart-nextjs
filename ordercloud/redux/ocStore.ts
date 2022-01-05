@@ -9,6 +9,7 @@ import ocProductList from './ocProductList'
 import ocProductDetail from './ocProductDetail'
 import ocCurrentOrder from './ocCurrentOrder'
 import ocAddressBook from './ocAddressBook'
+import ocProductSpecsCache from './ocProductSpecsCache'
 
 const store = configureStore({
   reducer: {
@@ -21,6 +22,7 @@ const store = configureStore({
     ocProductList,
     ocProductDetail,
     ocCurrentOrder,
+    ocProductSpecsCache
   },
 })
 

@@ -1,10 +1,13 @@
 import { FunctionComponent, useState } from 'react'
-import { OcCurrentOrderState } from '../../redux/ocCurrentOrder'
 import OcCheckoutBilling from './OcCheckoutBilling'
 import OcCheckoutPayment from './OcCheckoutPayment'
 import OcCheckoutReview from './OcCheckoutReview'
 import OcCheckoutShipping from './OcCheckoutShipping'
-import OcCheckoutSummary from './OcCheckoutSummary'
+
+/**
+ * Tailwind component:
+ * https://tailwindui.com/components/ecommerce/components/shopping-carts#component-28f287f64aac61d7f6dbc24f6311d975
+ */
 
 export interface OcCheckoutStepProps {
   onNext: () => void
@@ -28,17 +31,19 @@ const OcCheckout: FunctionComponent<{ onSubmitted: any }> = ({ onSubmitted }) =>
   }
 
   return (
-    <div>
-      {step === 0 && <OcCheckoutShipping onPrev={handlePrevClick} onNext={handleNextClick} />}
-      {step === 1 && <OcCheckoutBilling onPrev={handlePrevClick} onNext={handleNextClick} />}
-      {step === 2 && <OcCheckoutPayment onPrev={handlePrevClick} onNext={handleNextClick} />}
-      {step === 3 && (
-        <OcCheckoutReview
-          onPrev={handlePrevClick}
-          onNext={handleNextClick}
-          onOrderSubmitted={handleOrderSubmitted}
-        />
-      )}
+    <div className="bg-white">
+      <div className="max-w-4xl mx-auto py-10 sm:py-18">
+        {step === 0 && <OcCheckoutShipping onPrev={handlePrevClick} onNext={handleNextClick} />}
+        {step === 1 && <OcCheckoutBilling onPrev={handlePrevClick} onNext={handleNextClick} />}
+        {step === 2 && <OcCheckoutPayment onPrev={handlePrevClick} onNext={handleNextClick} />}
+        {step === 3 && (
+          <OcCheckoutReview
+            onPrev={handlePrevClick}
+            onNext={handleNextClick}
+            onOrderSubmitted={handleOrderSubmitted}
+          />
+        )}
+      </div>
     </div>
   )
 }

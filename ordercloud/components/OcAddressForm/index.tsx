@@ -56,8 +56,8 @@ const OcAddressForm: FunctionComponent<OcAddressFormProps> = ({
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <label htmlFor={`${id}_address_addressName`}>
-        Address Name
+      <label htmlFor={`${id}_address_addressName`}>Address Name</label>
+      <div className="mt-1">
         <input
           type="text"
           id={`${id}_address_addressName`}
@@ -66,9 +66,9 @@ const OcAddressForm: FunctionComponent<OcAddressFormProps> = ({
           value={formValues.AddressName}
           onChange={handleInputChange('AddressName')}
         />
-      </label>
-      <label htmlFor={`${id}_address_companyName`}>
-        Company Name
+      </div>
+      <label htmlFor={`${id}_address_companyName`}>Company Name</label>
+      <div className="mt-1">
         <input
           type="text"
           id={`${id}_address_companyName`}
@@ -77,9 +77,9 @@ const OcAddressForm: FunctionComponent<OcAddressFormProps> = ({
           value={formValues.CompanyName}
           onChange={handleInputChange('CompanyName')}
         />
-      </label>
-      <label htmlFor={`${id}_address_firstName`}>
-        First Name
+      </div>
+      <label htmlFor={`${id}_address_firstName`}>First Name</label>
+      <div className="mt-1">
         <input
           type="text"
           id={`${id}_address_firstName`}
@@ -89,9 +89,9 @@ const OcAddressForm: FunctionComponent<OcAddressFormProps> = ({
           onChange={handleInputChange('FirstName')}
           required
         />
-      </label>
-      <label htmlFor={`${id}_address_lastName`}>
-        Last Name
+      </div>
+      <label htmlFor={`${id}_address_lastName`}>Last Name</label>
+      <div className="mt-1">
         <input
           type="text"
           id={`${id}_address_lastName`}
@@ -101,9 +101,9 @@ const OcAddressForm: FunctionComponent<OcAddressFormProps> = ({
           onChange={handleInputChange('LastName')}
           required
         />
-      </label>
-      <label htmlFor={`${id}_address_street1`}>
-        Street Address
+      </div>
+      <label htmlFor={`${id}_address_street1`}>Street Address</label>
+      <div className="mt-1">
         <input
           type="text"
           id={`${id}_address_street1`}
@@ -113,9 +113,9 @@ const OcAddressForm: FunctionComponent<OcAddressFormProps> = ({
           onChange={handleInputChange('Street1')}
           required
         />
-      </label>
-      <label htmlFor={`${id}_address_street2`}>
-        Address Line 2
+      </div>
+      <label htmlFor={`${id}_address_street2`}>Address Line 2</label>
+      <div className="mt-1">
         <input
           type="text"
           id={`${id}_address_street2`}
@@ -124,9 +124,9 @@ const OcAddressForm: FunctionComponent<OcAddressFormProps> = ({
           value={formValues.Street2}
           onChange={handleInputChange('Street2')}
         />
-      </label>
-      <label htmlFor={`${id}_address_city`}>
-        City
+      </div>
+      <label htmlFor={`${id}_address_city`}>City</label>
+      <div className="mt-1">
         <input
           type="text"
           id={`${id}_address_city`}
@@ -136,9 +136,9 @@ const OcAddressForm: FunctionComponent<OcAddressFormProps> = ({
           onChange={handleInputChange('City')}
           required
         />
-      </label>
-      <label htmlFor={`${id}_address_state`}>
-        State
+      </div>
+      <label htmlFor={`${id}_address_state`}>State</label>
+      <div className="mt-1">
         <input
           type="text"
           id={`${id}_address_state`}
@@ -148,9 +148,9 @@ const OcAddressForm: FunctionComponent<OcAddressFormProps> = ({
           onChange={handleInputChange('State')}
           required
         />
-      </label>
-      <label htmlFor={`${id}_address_zip`}>
-        Zip
+      </div>
+      <label htmlFor={`${id}_address_zip`}>Zip</label>
+      <div className="mt-1">
         <input
           type="text"
           id={`${id}_address_zip`}
@@ -160,9 +160,9 @@ const OcAddressForm: FunctionComponent<OcAddressFormProps> = ({
           onChange={handleInputChange('Zip')}
           required
         />
-      </label>
-      <label htmlFor={`${id}_address_country`}>
-        Country
+      </div>
+      <label htmlFor={`${id}_address_country`}>Country</label>
+      <div className="mt-1">
         <input
           type="text"
           id={`${id}_address_country`}
@@ -172,9 +172,10 @@ const OcAddressForm: FunctionComponent<OcAddressFormProps> = ({
           onChange={handleInputChange('Country')}
           required
         />
-      </label>
-      <label htmlFor={`${id}_address_phone`}>
-        Phone Number
+      </div>
+      <label htmlFor={`${id}_address_phone`}>Phone Number</label>
+
+      <div className="mt-1">
         <input
           type="text"
           id={`${id}_address_phone`}
@@ -183,16 +184,20 @@ const OcAddressForm: FunctionComponent<OcAddressFormProps> = ({
           value={formValues.Phone}
           onChange={handleInputChange('Phone')}
         />
-      </label>
-      <button type="button" onClick={handleDeleteAddress} disabled={hasChanges || !address.ID}>
-        Delete Address
-      </button>
-      <button type="button" onClick={handleDiscardChanges} disabled={!hasChanges}>
-        Discard Changes
-      </button>
-      <button type="submit" disabled={!hasChanges}>
-        {address && address.ID ? 'Update Address' : 'Save Address'}
-      </button>
+      </div>
+      <div className="pt-5 pb-5">
+        <button type="button" onClick={handleDeleteAddress} disabled={hasChanges || !address.ID}className="ml-4 text-sm font-medium text-theme2 hover:text-theme2-dark sm:ml-0 sm:mt-3">
+          Delete Address
+        </button>
+        <br/>
+        <button type="button" onClick={handleDiscardChanges} disabled={!hasChanges}className="ml-4 text-sm font-medium text-theme2 hover:text-theme2-dark sm:ml-0 sm:mt-3">
+          Discard Changes{'  '}
+        </button>
+        <br/>
+        <button type="submit" disabled={!hasChanges} className="ml-4 text-sm font-medium text-theme2 hover:text-theme2-dark sm:ml-0 sm:mt-3">
+          {address && address.ID ? 'Update Address' : 'Save Address'}
+        </button>
+      </div>
     </form>
   )
 }

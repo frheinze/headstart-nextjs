@@ -18,39 +18,49 @@ const OcCheckoutSummary: FunctionComponent = () => {
   }, [order, isShippingAccurate])
 
   return order ? (
-    <table>
-      <tbody>
-        <tr>
-          <th>Subtotal</th>
-          <td>{formatPrice(order.Subtotal)}</td>
-        </tr>
-        {order.PromotionDiscount ? (
-          <tr>
-            <th>Promotion</th>
-            <td>{formatPrice(-order.PromotionDiscount)}</td>
-          </tr>
-        ) : null}
-        <tr>
-          <th>Shipping</th>
-          <td>{isShippingAccurate ? formatPrice(order.ShippingCost) : '---'}</td>
-        </tr>
-        <tr>
-          <th>Tax</th>
-          <td>{isTaxAccurate ? formatPrice(order.TaxCost) : '---'}</td>
-        </tr>
-        <tr>
-          <th>Total</th>
-          <td>{formatPrice(order.Total)}</td>
-        </tr>
-        {payments &&
-          payments.map((p) => (
-            <tr key={p.ID}>
-              <th>{`${p.Type} Payment`}</th>
-              <td>{formatPrice(-p.Amount)}</td>
-            </tr>
-          ))}
-      </tbody>
-    </table>
+    <div className="bg-gray-50 rounded-lg px-4 py-6 sm:p-6 lg:p-8 t">
+      <h2 className="sr-only">Order summary</h2>
+
+      <div className="flow-root">
+        <dl className="-my-4 text-sm divide-y divide-gray-200">
+          <div className="py-4 flex items-center justify-between">
+            <dt className="text-gray-600">Subtotal</dt>
+            <dd className="font-medium text-gray-900">{formatPrice(order.Subtotal)}</dd>
+          </div>
+          {/** TODO FHE Shipping */}
+          <div className="py-4 flex items-center justify-between">
+            <dt className="text-gray-600">Shipping</dt>
+            <dd className="font-medium text-gray-900">
+              {isShippingAccurate ? formatPrice(order.ShippingCost) : '---'}
+            </dd>
+          </div>
+          {/** TODO FHE Tax */}
+          <div className="py-4 flex items-center justify-between">
+            <dt className="text-gray-600">Tax</dt>
+            <dd className="font-medium text-gray-900">
+              {isTaxAccurate ? formatPrice(order.TaxCost) : '---'}
+            </dd>
+          </div>
+          {order.PromotionDiscount ? (
+            <div className="py-4 flex items-center justify-between">
+              <dt className="text-gray-600">Promotion discount</dt>
+              <dd className="font-medium text-gray-900">{formatPrice(-order.PromotionDiscount)}</dd>
+            </div>
+          ) : null}
+          <div className="py-4 flex items-center justify-between">
+            <dt className="text-base font-medium text-theme1-dark">Order total</dt>
+            <dd className="text-base font-medium text-theme1-dark">{formatPrice(order.Total)}</dd>
+          </div>
+          {payments &&
+            payments.map((p) => (
+              <div className="py-4 flex items-center justify-between" key={p.ID}>
+                <dt className="text-base text-theme1-dark">{`${p.Type} Payment`}</dt>
+                <dd className="text-base text-theme1-dark">{formatPrice(-p.Amount)}</dd>
+              </div>
+            ))}
+        </dl>
+      </div>
+    </div>
   ) : null
 }
 

@@ -26,11 +26,6 @@ const OcInitializer: FunctionComponent<OcProviderProps> = ({ children, config })
       dispatch(setConfig(config))
     } else if (!ocAuth.initialized) {
       dispatch(initializeAuth())
-    } else if (
-      (ocAuth.isAnonymous && !ocAuth.isAuthenticated) ||
-      (ocAuth.isAuthenticated && config.clientId.toLowerCase() !== ocAuth.decodedToken.cid)
-    ) {
-      dispatch(logout())
     } else if (ocAuth.isAuthenticated) {
       if (!ocUser.user && !ocUser.loading) {
         dispatch(getUser())

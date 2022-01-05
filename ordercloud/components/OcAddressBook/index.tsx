@@ -23,10 +23,6 @@ const OcAddressBook: FunctionComponent<OcAddressBookProps> = ({
     setSelectedId(selected || '')
   }, [selected])
 
-  // useEffect(() => {
-  //   setSelectedId((sid) => (sid || addresses.length ? addresses[addresses.length - 1].ID : ''))
-  // }, [addresses])
-
   const handleSelectionChange = useCallback(
     (e: ChangeEvent<HTMLSelectElement>) => {
       if (onChange) {
@@ -56,8 +52,8 @@ const OcAddressBook: FunctionComponent<OcAddressBookProps> = ({
 
   return addresses.length ? (
     <div>
-      <label htmlFor="select_address">
-        Select an address
+      <label htmlFor="select_address">Select an address</label>
+      <div className="mt-1">
         <select
           id="select_address"
           name="select_address"
@@ -71,7 +67,7 @@ const OcAddressBook: FunctionComponent<OcAddressBookProps> = ({
             </option>
           ))}
         </select>
-      </label>
+      </div>
       <OcAddressForm
         id={`${id}_address_book`}
         address={selectedAddress}

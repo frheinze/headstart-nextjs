@@ -6,12 +6,14 @@ const LoginPage: FunctionComponent = () => {
   const { push } = useRouter()
 
   const handleOnLoggedIn = () => {
-    push('/products')
+    push('/')
   }
 
   return (
-    <div>
-      <OcLoginForm onLoggedIn={handleOnLoggedIn} />
+    <div className="bg-white">
+      <div className="max-w-4xl mx-auto py-10 sm:py-18">
+        <OcLoginForm onLoggedIn={handleOnLoggedIn} />
+      </div>
     </div>
   )
 }

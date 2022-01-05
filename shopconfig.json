@@ -1,0 +1,10 @@
+{    
+    "SpecTypes":{
+        "Color":"Color"
+    },
+    "CurrencyFormat":{
+        "Locale": "de-DE",
+        "Currency": "EUR",
+        "CurrencyDisplay": "symbol"
+    }
+}

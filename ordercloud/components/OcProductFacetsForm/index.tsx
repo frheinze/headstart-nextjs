@@ -70,7 +70,7 @@ const OcProductFacetsForm: FunctionComponent<OcProductFacetsFormProps> = ({ onCh
     [handleFacetChange, filters]
   )
 
-  return (
+  return meta && meta.Facets.length > 0 ? (
     <form onSubmit={handleSubmit}>
       {meta && meta.Facets && meta.Facets.map(mapProductFacets)}
       <button type="submit" disabled={loading}>
@@ -82,7 +82,7 @@ const OcProductFacetsForm: FunctionComponent<OcProductFacetsFormProps> = ({ onCh
         </button>
       )}
     </form>
-  )
+  ) : null
 }
 
 export default OcProductFacetsForm

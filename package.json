@@ -9,14 +9,21 @@
     "lint": "tsc --noEmit && eslint . --ext js,ts,tsx,json --fix"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.2",
+    "@heroicons/react": "^1.0.5",
     "@reduxjs/toolkit": "^1.5.1",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.0",
     "axios": "^0.21.1",
     "lodash": "^4.17.21",
-    "next": "^10.2.3",
+    "next": "^12.0.7",
     "ordercloud-javascript-sdk": "^4.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-redux": "^7.2.3"
+    "react-native-svg": "^12.1.1",
+    "react-redux": "^7.2.3",
+    "tailwindcss": "^3.0.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.168",
@@ -24,6 +31,7 @@
     "@types/react": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
+    "autoprefixer": "^10.4.0",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.23.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -34,7 +42,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "postcss": ">=8.2.10",
+    "postcss": "^8.4.4",
     "prettier": "^2.2.1",
     "typescript": "^4.2.4"
   }

@@ -1,35 +1,24 @@
-import Head from 'next/head'
+// import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { FunctionComponent } from 'react'
+import OcHeroContent from '../../ordercloud/components/content/OcHeroContent'
+import OcInfo from '../../ordercloud/components/content/OcInfo'
 import OcProductDetail from '../../ordercloud/components/OcProductDetail'
-import { useOcSelector } from '../../ordercloud/redux/ocStore'
+import useOcProduct from '../../ordercloud/hooks/useOcProduct'
 
 const ProductPage: FunctionComponent = () => {
-  const { isReady, query, push } = useRouter()
+  const { isReady, query } = useRouter()
 
-  const productName = useOcSelector(
-    (s) => s.ocProductDetail.product && s.ocProductDetail.product.Name
-  )
+  const productId = query.productid as string
+  const product = useOcProduct(productId)
 
-  const handleLineItemUpdated = () => {
-    push('/cart')
-  }
-
-  return (
+  return product && isReady ? (
     <>
-      <Head>
-        <title>{productName}</title>
-      </Head>
-      {isReady ? (
-        <OcProductDetail
-          onLineItemUpdated={handleLineItemUpdated}
-          productId={query.productid as string}
-          lineItemId={query.lineitem as string}
-        />
-      ) : (
-        <h1>Loading</h1>
-      )}
+      <OcHeroContent title={product.Name} subtitle="Product:" />
+      <OcProductDetail product={product} />
     </>
+  ) : (
+    <OcInfo />
   )
 }
 
