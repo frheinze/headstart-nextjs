@@ -13,7 +13,7 @@ The purpose of this fork is to have more fun working with Sitecore's Next.js sol
 But I wouldn't consider this solution as a headstart solution (neither is the original by the way), it's more a playground for small demo projects or proof of concepts.
 
 ## Why TailwindCSS?
-For me as a backend developer it is easy to use. In a few hours I've implemted some pages and modules and put a theme over it.
+For me as a backend developer it is easy to use. In a few hours I've implemented some pages and modules and put a theme over it.
 
 The principle of doing styling directly in the markup based on predefined classes of the framework is very effective and requires little familiarization with project specific CSS classes. 
 
