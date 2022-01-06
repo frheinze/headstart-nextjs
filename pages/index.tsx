@@ -11,7 +11,7 @@ import OcHeroCTA from '../ordercloud/components/content/OcHeroCTA'
 const Home: FunctionComponent = () => {
   const features = [
     {
-      name: 'Tailwind SS',
+      name: 'Tailwind CSS',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
       icon: GlobeAltIcon,

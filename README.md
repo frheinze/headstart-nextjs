@@ -1,6 +1,5 @@
 # Introduction
-In general for me the [Sitecore's Next.js headstart solution](https://github.com/ordercloud-api/headstart) fits perfectly for a quick start after the [Getting Started journey](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud) of OrderCloud. In my opinion, the barrier to entry is significantly lower than that of the [official headstart solution](https://github.com/ordercloud-api/headstart). Especially since you don't have to worry about Azure infrastructure, initial seeding and middleware right from the start.
-
+In general for me the [Sitecore's Next.js headstart solution](https://github.com/ordercloud-api/headstart) fits perfectly for a quick start after the [Getting Started journey](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud) of OrderCloud. In my opinion, the barrier to entry is significantly lower than that of the [official headstart solution](https://github.com/ordercloud-api/headstart). Especially since you don't have to worry about Azure infrastructure, initial seeding and middleware right from the beginning - and it's built on React ;)
 
 
 # Why this fork?
@@ -8,9 +7,8 @@ This solution is based on Sitecore's Next.js headstart solution, but dressed up 
 
 The purpose of this fork is to have more fun working with Sitecore's Next.js solution:
 * It's prettier.
-* A few small bugs were fixed.
+* A few small bugs are fixed.
 * You can customize some basics (see below).
-* And it's built on React ;)
 
 But I wouldn't consider this solution as a headstart solution (neither is the original by the way), it's more a playground for small demo projects or proof of concepts.
 
