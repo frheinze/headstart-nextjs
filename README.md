@@ -1,5 +1,5 @@
 # Introduction
-In general for me the [Sitecore's Next.js headstart solution](https://github.com/ordercloud-api/headstart) fits perfectly for a quick start after the [Getting Started journey](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud) of OrderCloud. In my opinion, the barrier to entry is significantly lower than that of the [official headstart solution](https://github.com/ordercloud-api/headstart). Especially since you don't have to worry about Azure infrastructure, initial seeding and middleware right from the beginning - and it's built on React ;)
+In general for me the [Sitecore's Next.js headstart solution](https://github.com/ordercloud-api/headstart-nextjs) fits perfectly for a quick start after the [Getting Started journey](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud) of OrderCloud. In my opinion, the barrier to entry is significantly lower than that of the [official headstart solution](https://github.com/ordercloud-api/headstart). Especially since you don't have to worry about Azure infrastructure, initial seeding and middleware right from the beginning - and it's built on React ;)
 
 
 # Why this fork?
@@ -13,7 +13,7 @@ The purpose of this fork is to have more fun working with Sitecore's Next.js sol
 But I wouldn't consider this solution as a headstart solution (neither is the original by the way), it's more a playground for small demo projects or proof of concepts.
 
 ## Why TailwindCSS?
-For me as a backend developer it is easy to use. In a few hours I've implemted some pages and modules and put a theme over it.
+For me as a backend developer it is easy to use. In a few hours I've implemented some pages and modules and put a theme over it.
 
 The principle of doing styling directly in the markup based on predefined classes of the framework is very effective and requires little familiarization with project specific CSS classes. 
 
