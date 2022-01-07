@@ -21,15 +21,23 @@ const OcProductFacetField: FunctionComponent<OcProductFacetFieldProps> = ({
   }, [selected, onChange, value])
 
   return (
-    <label htmlFor={valueId}>
+    <div key={valueId} className="flex items-center">
       <input
         id={valueId}
+        name={value}
+        defaultValue={value}
         type="checkbox"
-        checked={selected.includes(value)}
+        className="h-4 w-4 border-gray-300 rounded text-theme1 focus:ring-theme1"
         onChange={handleCheckboxChange}
-      />{' '}
-      {`${value} (${count})`}
-    </label>
+        checked={selected.includes(value)}
+      />
+      <label
+        htmlFor={valueId}
+        className="ml-3 text-sm text-gray-600"
+      >
+        {`${value} (${count})`}
+      </label>
+    </div>
   )
 }
 

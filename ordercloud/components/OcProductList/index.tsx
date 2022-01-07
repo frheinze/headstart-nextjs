@@ -10,13 +10,24 @@ import OcProductCard from '../OcProductCard'
 
 export interface OcProductListProps {
   options?: OcProductListOptions
+  standalone?: boolean
 }
 
-const OcProductList: FunctionComponent<OcProductListProps> = ({ options }) => {
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+const OcProductList: FunctionComponent<OcProductListProps> = ({ options, standalone = true }) => {
   const products = useOcProductList(options)
   return (
-    <div className="container mx-auto py-0 sm:py-4 px-2">
-      <div className="bg-white mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
+    <div className={standalone ? 'container mx-auto py-0 sm:py-4 px-4 sm:px-6 lg:px-8' : ''}>
+      <div
+        className={classNames(
+          'grid',
+          standalone ? 'grid-cols-2 md:grid-cols-4' : 'grid-cols-2 md:grid-cols-3',
+          'bg-white mt-6 gap-x-4 gap-y-4 sm:gap-x-6 sm:gap-y-6 lg:gap-x-8 lg:gap-y-8'
+        )}
+      >
         {products && products.map((p, i) => <OcProductCard key={i} product={p} />)}
       </div>
     </div>

@@ -87,7 +87,7 @@ const OcHeader: FunctionComponent<OcHeaderProps> = () => {
                 {/* Icon Navi */}
                 <div className="flex items-center mr-2">
                   {/* Search */}
-                  <Link href="/products">
+                  <Link href="/search">
                     <a className="p-2 text-gray-500">
                       <span className="sr-only">Search</span>
                       <SearchIcon className="w-6 h-6" aria-hidden="true" />
@@ -142,7 +142,7 @@ const OcHeader: FunctionComponent<OcHeaderProps> = () => {
                     {navigation.map((n) => (
                       <Disclosure.Button
                         as="a"
-                        href="#"
+                        href={n.href}
                         key={n.name}
                         className="bg-theme1-pastel border-theme1 text-theme1 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
                       >

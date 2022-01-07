@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react'
 import OcHeroContent from '../../ordercloud/components/content/OcHeroContent'
-import OcInfo from '../../ordercloud/components/content/OcInfo'
 import OcProductList from '../../ordercloud/components/OcProductList'
 import useNextRouterMapping, { NextQueryMap } from '../../ordercloud/hooks/useNextRouterMapping'
 
@@ -17,15 +16,13 @@ const queryMap: NextQueryMap = {
 }
 
 const ProductListPage: FunctionComponent = () => {
-  const { isReady, options } = useNextRouterMapping(queryMap)
+  const { options } = useNextRouterMapping(queryMap)
 
-  return isReady ? (
+  return (
     <>
       <OcHeroContent title="Products" subtitle="All" />
       <OcProductList options={options} />
     </>
-  ) : (
-    <OcInfo />
   )
 }
 

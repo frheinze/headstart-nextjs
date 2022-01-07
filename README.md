@@ -33,7 +33,7 @@ For comparison the link to the official [Next.js demo from Sitecore](https://git
 The following pages were already styled with TailwindCSS:
 * /home
 * /products
-* /search (WIP)
+* /search
 * /product/[id]
 * Basics only: 
   * /login
@@ -51,11 +51,11 @@ First of all, please check [this part of the official readme](https://github.com
 
 ## Customize your demo shop
 ### Theming
-* You can change the theme colors in `tailwind.config.js`.
-* You can replace the logo in `/ordercloud/components/baselayout/OcHeader/index.tsx`.
+* You can change the theme colors in [`tailwind.config.js`](https://github.com/frheinze/headstart-nextjs/blob/main/tailwind.config.js).
+* You can replace the logo in [`/ordercloud/components/baselayout/OcHeader/index.tsx`](https://github.com/frheinze/headstart-nextjs/blob/main/ordercloud/components/baselayout/OcHeader/index.tsx).
 
 ### Navigation
-You can edit the main navigation in `/ordercloud/components/baselayout/OcHeader/index.tsx`.
+You can edit the main navigation in [`/ordercloud/components/baselayout/OcHeader/index.tsx`](https://github.com/frheinze/headstart-nextjs/blob/main/ordercloud/components/baselayout/OcHeader/index.tsx).
 
 ### I18N
 You can edit the price format or the currency in `shopconfig.json`. 
@@ -76,7 +76,7 @@ To make the demo shop look even better, you should maintain a few product images
 ```
 
 ### Color specs (optional)
-I have implemented the possibility to buy products in different colors (product specs or variants). If you want to use this, you have to add the following properties to **specs**:
+I have implemented the possibility to buy products in different colors (product specs or variants). If you want to use this feature, you have to add the following properties to **specs**:
 ```
 "xp": {
   "Type": "Color"
@@ -88,5 +88,13 @@ and **spec options**:
   "cssColor": "bg-red-600"
 }
 ```
+If you do not use these CSS classes anywhere else, then you must add them to the [`tailwind.config.js`](https://github.com/frheinze/headstart-nextjs/blob/main/tailwind.config.js) safelist. Otherwise Tailwind will optimize them away, see https://v2.tailwindcss.com/docs/optimizing-for-production#safelisting-specific-classes.
 
-Attention: For new spec options you always have to [generate the variants](https://ordercloud.io/api-reference/product-catalogs/products/generate-variants) first!
+> Attention: For new spec options you always have to [generate the product variants](https://ordercloud.io/api-reference/product-catalogs/products/generate-variants) first!
+
+### Product facets (optional)
+If you like to use the product search, you need to configure product facets in OrderCloud. As you can see in [`/pages/search.tsx`](https://github.com/frheinze/headstart-nextjs/blob/main/pages/search.tsx) I've prepared the following facets (and of cause you can edit them):
+```
+  'xp.colors': 'color',
+  'xp.is_new': 'is_new',
+```

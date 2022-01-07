@@ -22,7 +22,8 @@ const OcProductCard: FunctionComponent<OcProductCardProps> = ({ product }) => {
 
   return (
     <div className="group relative">
-      <div className="w-full h-56 bg-theme1-pastel rounded-md overflow-hidden group-hover:opacity-75 lg:h-72 xl:h-80">
+      
+      <div className="w-full bg-theme1-pastel rounded-md overflow-hidden group-hover:opacity-75 h-56 lg:h-72 xl:h-80">
         {product.xp && product.xp.images && product.xp.images[0] ? (
           <img
             src={product.xp.images[0].url}

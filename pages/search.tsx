@@ -1,7 +1,6 @@
 import { Filters } from 'ordercloud-javascript-sdk'
 import { FunctionComponent, useCallback } from 'react'
 import OcHeroContent from '../ordercloud/components/content/OcHeroContent'
-import OcInfo from '../ordercloud/components/content/OcInfo'
 import OcProductFacetForm from '../ordercloud/components/OcProductFacetsForm'
 import OcProductList from '../ordercloud/components/OcProductList'
 import useNextRouterMapping, { NextQueryMap } from '../ordercloud/hooks/useNextRouterMapping'
@@ -12,30 +11,30 @@ const queryMap: NextQueryMap = {
   pageSize: 'ps',
   searchOn: 'so',
   sortBy: 'o',
-  'xp.size': 'size',
-  'xp.color': 'color',
-  'xp.test_boolean': 'bool',
-  'xp.test_number': 'num',
+  'xp.colors': 'color',
+  'xp.is_new': 'is_new',
 }
 
 const ProductListPage: FunctionComponent = () => {
-  const { isReady, options, updateQuery } = useNextRouterMapping(queryMap)
+  const { options, updateQuery } = useNextRouterMapping(queryMap)
 
   const handleFacetChange = useCallback(
     (updatedFilters: Filters) => {
+      console.log(options)
       updateQuery({ ...options, page: undefined, filters: updatedFilters })
     },
     [options, updateQuery]
   )
 
-  return isReady ? (
+  return (
     <>
-      <OcHeroContent title="Search (TBD)" subtitle="Product" />
-      <OcProductFacetForm onChange={handleFacetChange} />
-      <OcProductList options={options} />
+      <OcHeroContent title="Search" subtitle="Product" />
+
+      <div className="container mx-auto py-0 sm:py-4 px-4 sm:px-6 lg:px-8 md:flex">
+        <OcProductFacetForm onChange={handleFacetChange} />
+        <OcProductList options={options} standalone={false} />    
+      </div>
     </>
-  ) : (
-    <OcInfo />
   )
 }
 
